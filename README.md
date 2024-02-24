@@ -42,29 +42,53 @@ IoT 시스템개발자 심화 프로그래밍 언어 학습리포지토리
 	2. 숫자 : 정수(int),실수
 	
 - 정수로 계산하기
+	
+
+
 
 ## 2일차
+// class 안에 들어 가는 함수 = Method
 
+- Default Value
+- Reference 함수
+	- 반환형 Reference Type
+- Name Space
+- 전역,지역변수
+- C에서 메모리
+	- 스택 : 지역변수, 매개변수
+	- HEAP : 사용자에게 할당된 영역
+		= Malloc() -> free()반환 = 사용을 할려면 Malloc으로 할당을 받는다
+	- data: 함수, 전역변수, 상수, 문자 리터럴
+	
+	- // A & B = 비트 And 연산자
+	- // A && B = 논리 And 연산자 = 논리 곱
+		
+-------------- clang04_test--------------
 
 ## 3일차
+- Reference 함수(변수) = 계속
+- MALLOC & FREE => NEW & DELETE(대신)
+	= Malloc() -> free()반환 = 사용을 할려면 Malloc으로 할당을 받는다
+	-> HEAP : 사용자에게 할당된 영역
+	=> 사용을 할려면 Malloc()(C++: NEW)으로 할당을 받는다 => FREE(C++: DELETE로 반환)
 
-
+- 접근제어 지시자
+	- Public
+	- Protected
+	- Private
+	
+- C++ 파일분할 (C++ 와 Head 파일로 분할하는 것 배움)
+	
 ## 4일차
-
 
 ## 5일차
 
-
 ## 6일차
-
 
 ## 7일차
 
-
 ## 8일차
 
-
-## 9일차
-
+## 9일차 
 
 ## 10일차
