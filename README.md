@@ -80,7 +80,20 @@ IoT 시스템개발자 심화 프로그래밍 언어 학습리포지토리
 - C++ 파일분할 (C++ 와 Head 파일로 분할하는 것 배움)
 	
 ## 4일차
+- Class = 멤버변수와 멤버함수로 구성된다. = 클래스 내부에는 멤버들의 선언을 작성 = 멤버함수의 정의를 외부로 뺌(Scope 연산자 사용) = 일반적으로 멤버변수 = Private, 멤버함수= Public의 접근제한을 사용 = 생성자(기능:객체를 생성하고, 초기화)
 
+- 클래스(Class) 와 객채(Object)
+
+- 객체지향 프로그래밍의 이해
+
+- 정보은닉
+
+- 생성자와 소멸자 a. SimpleClass sc(20);
+=> 주어진 코드는 SimpleClass라는 클래스의 객체 sc를 생성. => 이 객체는 생성자에 정수 값 20을 전달하여 초기화
+
+- b. SimpleClass *ptr = new SimpleClass(); => SimpleClass 클래스의 포인터를 생성하고, 동적으로 메모리를 할당하여 객체를 초기화. => 여기서 new 연산자는 힙(heap) 메모리에서 동적으로 객체를 생성하고, 해당 객체에 대한 포인터를 반환. => SimpleClass *ptr은 SimpleClass 타입을 가리키는 포인터를 선언. => new SimpleClass()는 SimpleClass의 기본 생성자를 호출하여 객체를 생성. 이후 반환된 포인터는 ptr에 할당. => 따라서 ptr은 힙 메모리에 동적으로 생성된 SimpleClass 객체를 가리키는 포인터
+
+- strcpy, Private, Public
 ## 5일차
 
 ## 6일차
