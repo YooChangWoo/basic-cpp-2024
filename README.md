@@ -150,9 +150,51 @@ SoSimple *ptrArr = new SoSimple[10]
 
 - C++ 에서의 Static
 ## 7일차
+```c++
+Person class
+	char *name; // 이름을 저장하는 동적 할당된 문자열 포인터
+	int age; // 나이를 저장하는 정수
 
+int main()
+{
+    Person p("Hong", 30); // "Hong" 문자열을 가지고 30이라는 나이로 Person 객체 생성
+    p.personInfo(); // Person 객체의 정보 출력
+
+    Person copyp(p); // p 객체를 복사하여 새로운 객체 copyp 생성
+    copyp.personInfo(); // 복사된 객체 copyp의 정보 출력
+
+    return 0;
+}
+	```
+	
+		- name 필드는 힙영역에 메모리를 할당하여 저장
+		- 자기 객체를 생성하고 객체 복사를 하시오
+
+- 상속(INHERITANCE)
+	- 문법적 이해
+	- 유도클래스의 객체생성 과정
+
+- Protected 선언과 세가지 형태의 상속
+	
 ## 8일차
+- 다형성
+	- 오버로딩 = 다중 정의
+	- 오버라이딩 = 재정의, 상속관계에서 사용
 
+- 참조자의 참조 가능성
+- 가상 소멸자와 참조자의 참조 가능성
+- 순수 가상 함수와 추상 클래스
+- 멤버함수와 가상함수의 동작원리
+- 가상함수
+
+(오후 점심시간)
+=> remotecontrol 클래스, samsungTv클래스, lgTv클래스를 설계하고 
+	-> remote->on() 호출하면 연결된 tv에 따라서 삼성TV on 또는 엘지Tv on 출력 되도록 프로그램 완성
+
+- 순수 가상 함수
+- 가상 소멸자와 참조자의 참조 가능성
+- 가상(Virtual)의 원리와 다중상속
+- 다중상속에 대한 이해
 ## 9일차 
 
 ## 10일차
