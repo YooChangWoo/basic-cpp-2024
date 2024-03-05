@@ -91,26 +91,26 @@ public:
 
     int GetPay() const
     {
-        cout << "SalesWorker" << endl;      // ¿À¹ö¶óÀÌµùµÈ ¸â¹ö ÇÔ¼ö´Â ÀÚ½Ä °ÍÀÌ ½ÇÇàµÈ´Ù
-        return PermanentWorker::GetPay()   // µû¶ó¼­ ÀçÁ¤ÀÇµÈ ºÎ¸ð°ÍÀ» È£ÃâÇÏ·Á¸é PermanentWorker(ºÎ¸ð)ÀÇ GetPay ÇÔ¼ö È£Ãâ
+        cout << "SalesWorker" << endl;      // ì˜¤ë²„ë¼ì´ë”©ëœ ë©¤ë²„ í•¨ìˆ˜ëŠ” ìžì‹ ê²ƒì´ ì‹¤í–‰ëœë‹¤
+        return PermanentWorker::GetPay()   // ë”°ë¼ì„œ ìž¬ì •ì˜ëœ ë¶€ëª¨ê²ƒì„ í˜¸ì¶œí•˜ë ¤ë©´ PermanentWorker(ë¶€ëª¨)ì˜ GetPay í•¨ìˆ˜ í˜¸ì¶œ
             + (int)(salesResult * bonusRatio);
     }
 
     void ShowSalaryInfo() const
     {
         ShowYourName();
-        cout << "salary: " << GetPay() << endl << endl;      // SalesWorkerÀÇ GetPay ÇÔ¼ö°¡ È£ÃâµÊ
+        cout << "salary: " << GetPay() << endl << endl;      // SalesWorkerì˜ GetPay í•¨ìˆ˜ê°€ í˜¸ì¶œë¨
     }
 };
 
 class EmployeeHandler
 {
 private:
-    Employee* empList[50];         // °´Ã¼ Æ÷ÀÎÅÍ ¹è¿­
+    Employee* empList[50];         // ê°ì²´ í¬ì¸í„° ë°°ì—´
     int empNum;
 
 public:
-    EmployeeHandler() : empNum(0)         // empList() - nullptr ÃÊ±âÈ­ == empList{}
+    EmployeeHandler() : empNum(0)         // empList() - nullptr ì´ˆê¸°í™” == empList{}
     { }
 
     void AddEmployee(Employee* emp)
@@ -148,27 +148,27 @@ public:
 
 int main(void)
 {
-    // Á÷¿ø°ü¸®¸¦ ¸ñÀûÀ¸·Î ¼³°èµÈ ÄÁÆ®·Ñ Å¬·¡½ºÀÇ °´Ã¼»ý¼º
+    // ì§ì›ê´€ë¦¬ë¥¼ ëª©ì ìœ¼ë¡œ ì„¤ê³„ëœ ì»¨íŠ¸ë¡¤ í´ëž˜ìŠ¤ì˜ ê°ì²´ìƒì„±
     EmployeeHandler handler;
 
-    // Á¤±ÔÁ÷ µî·Ï
+    // ì •ê·œì§ ë“±ë¡
     handler.AddEmployee(new PermanentWorker("SON", 1000));
     handler.AddEmployee(new PermanentWorker("LEE", 1500));
 
-    // ÀÓ½ÃÁ÷ µî·Ï
+    // ìž„ì‹œì§ ë“±ë¡
     TemporaryWorker* alba = new TemporaryWorker("KIM", 700);
-    alba->AddworkTime(5);         // 5½Ã°£ ÀÏÇÑ°á°ú µî·Ï
+    alba->AddworkTime(5);         // 5ì‹œê°„ ì¼í•œê²°ê³¼ ë“±ë¡
     handler.AddEmployee(alba);
 
-    // ¿µ¾÷Á÷ µî·Ï
+    // ì˜ì—…ì§ ë“±ë¡
     SalesWorker* seller = new SalesWorker("Hwang", 1000, 0.1);
-    seller->AddSalesResult(7000);         // ¿µ¾÷½ÇÀû 7000
+    seller->AddSalesResult(7000);         // ì˜ì—…ì‹¤ì  7000
     handler.AddEmployee(seller);
 
-    // ÀÌ¹ø ´Þ¿¡ ÁöºÒÇØ¾ß ÇÒ ±Þ¿©ÀÇ Á¤º¸
+    // ì´ë²ˆ ë‹¬ì— ì§€ë¶ˆí•´ì•¼ í•  ê¸‰ì—¬ì˜ ì •ë³´
     handler.ShowAllsalaryInfo();
 
-    // ÀÌ¹ø ´Þ¿¡ ÁöºÒÇØ¾ß ÇÒ ±Þ¿©ÀÇ ÃÑÇÕ
+    // ì´ë²ˆ ë‹¬ì— ì§€ë¶ˆí•´ì•¼ í•  ê¸‰ì—¬ì˜ ì´í•©
     handler.ShowTotalSalary();
 
     SalesWorker s("Hong", 1000, 0.1);
@@ -178,34 +178,34 @@ int main(void)
 }
 
 /*
-»ó¼Ó ¹× ´ÙÇü¼º È°¿ë:
+ìƒì† ë° ë‹¤í˜•ì„± í™œìš©:
 
-Employee, PermanentWorker, TemporaryWorker, SalesWorker Å¬·¡½º´Â »ó¼ÓÀ» ÅëÇØ °èÃþ ±¸Á¶¸¦ Çü¼ºÇÕ´Ï´Ù.
-Employee Å¬·¡½º¸¦ ±â¹ÝÀ¸·Î ÇÏÀ§ Å¬·¡½º¿¡¼­ °¢ÀÚÀÇ Æ¯¼ºÀ» ±¸ÇöÇÕ´Ï´Ù.
-´ÙÇü¼ºÀ» ÀÌ¿ëÇÏ¿© Employee Æ÷ÀÎÅÍ·Î ´Ù¾çÇÑ Á¾·ùÀÇ Á÷¿øÀ» ´Ù·ê ¼ö ÀÖ½À´Ï´Ù.
+Employee, PermanentWorker, TemporaryWorker, SalesWorker í´ëž˜ìŠ¤ëŠ” ìƒì†ì„ í†µí•´ ê³„ì¸µ êµ¬ì¡°ë¥¼ í˜•ì„±í•©ë‹ˆë‹¤.
+Employee í´ëž˜ìŠ¤ë¥¼ ê¸°ë°˜ìœ¼ë¡œ í•˜ìœ„ í´ëž˜ìŠ¤ì—ì„œ ê°ìžì˜ íŠ¹ì„±ì„ êµ¬í˜„í•©ë‹ˆë‹¤.
+ë‹¤í˜•ì„±ì„ ì´ìš©í•˜ì—¬ Employee í¬ì¸í„°ë¡œ ë‹¤ì–‘í•œ ì¢…ë¥˜ì˜ ì§ì›ì„ ë‹¤ë£° ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-°¡»ó ÇÔ¼ö ¹× ¼ø¼ö °¡»ó ÇÔ¼ö:
+ê°€ìƒ í•¨ìˆ˜ ë° ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜:
 
-Employee Å¬·¡½º¿¡´Â ¼ø¼ö °¡»ó ÇÔ¼ö(GetPay(), ShowSalaryInfo())°¡ ÀÖ½À´Ï´Ù.
-¼ø¼ö °¡»ó ÇÔ¼ö´Â ÇÏÀ§ Å¬·¡½º¿¡¼­ ¹Ýµå½Ã ÀçÁ¤ÀÇµÇ¾î¾ß ÇÕ´Ï´Ù.
-ÀÌ¸¦ ÅëÇØ Á÷¿ø Å¬·¡½ºÀÇ Çàµ¿ÀÌ ´ÙÇüÀûÀ¸·Î ±¸ÇöµÇ°í,
-Employee Æ÷ÀÎÅÍ¸¦ ÅëÇØ ½ÇÁ¦ °´Ã¼ÀÇ Å¸ÀÔ¿¡ µû¶ó ÀûÀýÇÑ µ¿ÀÛÀÌ ¼öÇàµË´Ï´Ù.
+Employee í´ëž˜ìŠ¤ì—ëŠ” ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜(GetPay(), ShowSalaryInfo())ê°€ ìžˆìŠµë‹ˆë‹¤.
+ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜ëŠ” í•˜ìœ„ í´ëž˜ìŠ¤ì—ì„œ ë°˜ë“œì‹œ ìž¬ì •ì˜ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
+ì´ë¥¼ í†µí•´ ì§ì› í´ëž˜ìŠ¤ì˜ í–‰ë™ì´ ë‹¤í˜•ì ìœ¼ë¡œ êµ¬í˜„ë˜ê³ ,
+Employee í¬ì¸í„°ë¥¼ í†µí•´ ì‹¤ì œ ê°ì²´ì˜ íƒ€ìž…ì— ë”°ë¼ ì ì ˆí•œ ë™ìž‘ì´ ìˆ˜í–‰ë©ë‹ˆë‹¤.
 
-µ¿Àû ¸Þ¸ð¸® ÇÒ´ç ¹× ÇØÁ¦:
+ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ë° í•´ì œ:
 
-EmployeeHandler Å¬·¡½º´Â Æ÷ÀÎÅÍ ¹è¿­À» »ç¿ëÇÏ¿© Á÷¿ø °´Ã¼¸¦ µ¿ÀûÀ¸·Î ÇÒ´çÇÏ°í °ü¸®ÇÕ´Ï´Ù.
-°´Ã¼ÀÇ »ý¸íÁÖ±â°¡ °ü¸® Å¬·¡½º(EmployeeHandler)º¸´Ù ±æ±â ¶§¹®¿¡,
-¼Ò¸êÀÚ¸¦ ÅëÇØ ¸Þ¸ð¸® ´©¼ö¸¦ ¹æÁöÇÏ±â À§ÇØ µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÕ´Ï´Ù.
+EmployeeHandler í´ëž˜ìŠ¤ëŠ” í¬ì¸í„° ë°°ì—´ì„ ì‚¬ìš©í•˜ì—¬ ì§ì› ê°ì²´ë¥¼ ë™ì ìœ¼ë¡œ í• ë‹¹í•˜ê³  ê´€ë¦¬í•©ë‹ˆë‹¤.
+ê°ì²´ì˜ ìƒëª…ì£¼ê¸°ê°€ ê´€ë¦¬ í´ëž˜ìŠ¤(EmployeeHandler)ë³´ë‹¤ ê¸¸ê¸° ë•Œë¬¸ì—,
+ì†Œë©¸ìžë¥¼ í†µí•´ ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•´ ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•©ë‹ˆë‹¤.
 
-°´Ã¼ÁöÇâ ¼³°è ¿øÄ¢:
+ê°ì²´ì§€í–¥ ì„¤ê³„ ì›ì¹™:
 
-ÄÚµå´Â °´Ã¼ÁöÇâÀûÀÎ ¼³°è ¿øÄ¢¿¡ µû¶ó °¢ Å¬·¡½º°¡ ÇÏ³ªÀÇ ¸ñÀûÀ» °®µµ·Ï ÀÛ¼ºµÇ¾ú½À´Ï´Ù.
-ÀÌ·¯ÇÑ ¼³°è´Â ÄÚµåÀÇ Àç»ç¿ë¼ºÀ» ³ôÀÌ°í, À¯Áö º¸¼ö¸¦ ¿ëÀÌÇÏ°Ô ÇÕ´Ï´Ù.
+ì½”ë“œëŠ” ê°ì²´ì§€í–¥ì ì¸ ì„¤ê³„ ì›ì¹™ì— ë”°ë¼ ê° í´ëž˜ìŠ¤ê°€ í•˜ë‚˜ì˜ ëª©ì ì„ ê°–ë„ë¡ ìž‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.
+ì´ëŸ¬í•œ ì„¤ê³„ëŠ” ì½”ë“œì˜ ìž¬ì‚¬ìš©ì„±ì„ ë†’ì´ê³ , ìœ ì§€ ë³´ìˆ˜ë¥¼ ìš©ì´í•˜ê²Œ í•©ë‹ˆë‹¤.
 
-Å¬·¡½ºÀÇ Ã¥ÀÓ ºÐ¸®:
+í´ëž˜ìŠ¤ì˜ ì±…ìž„ ë¶„ë¦¬:
 
-°¢ Å¬·¡½º´Â ÇÑ °¡Áö ÁÖ¿ä Ã¥ÀÓ¿¡ ÁýÁßÇÕ´Ï´Ù.
-¿¹¸¦ µé¾î, Employee Å¬·¡½º´Â Á÷¿øÀÇ ±âº» Á¤º¸¸¦ ´Ù·ç°í,
-PermanentWorker, TemporaryWorker, SalesWorker´Â °¢°¢ÀÇ ±Þ¿© °è»ê ¹æ½ÄÀ» ´Ù·ì´Ï´Ù.
-ÀÌ·¯ÇÑ Æ÷ÀÎÆ®µéÀº ÄÚµåÀÇ À¯¿¬¼º°ú È®Àå¼ºÀ» ³ôÀÌ¸ç, °´Ã¼ÁöÇâÀûÀÎ ¿øÄ¢À» µû¶ó ÄÚµå¸¦ ±¸¼ºÇÕ´Ï´Ù.
+ê° í´ëž˜ìŠ¤ëŠ” í•œ ê°€ì§€ ì£¼ìš” ì±…ìž„ì— ì§‘ì¤‘í•©ë‹ˆë‹¤.
+ì˜ˆë¥¼ ë“¤ì–´, Employee í´ëž˜ìŠ¤ëŠ” ì§ì›ì˜ ê¸°ë³¸ ì •ë³´ë¥¼ ë‹¤ë£¨ê³ ,
+PermanentWorker, TemporaryWorker, SalesWorkerëŠ” ê°ê°ì˜ ê¸‰ì—¬ ê³„ì‚° ë°©ì‹ì„ ë‹¤ë£¹ë‹ˆë‹¤.
+ì´ëŸ¬í•œ í¬ì¸íŠ¸ë“¤ì€ ì½”ë“œì˜ ìœ ì—°ì„±ê³¼ í™•ìž¥ì„±ì„ ë†’ì´ë©°, ê°ì²´ì§€í–¥ì ì¸ ì›ì¹™ì„ ë”°ë¼ ì½”ë“œë¥¼ êµ¬ì„±í•©ë‹ˆë‹¤.
 */

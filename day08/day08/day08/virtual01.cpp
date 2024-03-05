@@ -3,58 +3,58 @@ using namespace std;
 
 class Base {
 public:
-    Base() {} // ±âº» »ý¼ºÀÚ
-    virtual ~Base() {} // °¡»ó ¼Ò¸êÀÚ: ÆÄ»ý Å¬·¡½ºÀÇ °´Ã¼°¡ ÆÄ±«µÉ ¶§ ÇØ´ç ÆÄ»ý Å¬·¡½ºÀÇ ¼Ò¸êÀÚ¸¦ È£ÃâÇÏ±â À§ÇØ °¡»ó ¼Ò¸êÀÚ·Î ¼±¾ð
-    virtual void func1() { cout << "Base::func1()" << endl; } // °¡»ó ÇÔ¼ö func1(): ÆÄ»ý Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇ °¡´ÉÇÑ ÇÔ¼ö
-    virtual void func2() { cout << "Base::func2()" << endl; } // °¡»ó ÇÔ¼ö func2(): ÆÄ»ý Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇ °¡´ÉÇÑ ÇÔ¼ö
-    virtual void func3() { cout << "Base::func3()" << endl; } // °¡»ó ÇÔ¼ö func3(): ÆÄ»ý Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇ °¡´ÉÇÑ ÇÔ¼ö
+    Base() {} // ê¸°ë³¸ ìƒì„±ìž
+    virtual ~Base() {} // ê°€ìƒ ì†Œë©¸ìž: íŒŒìƒ í´ëž˜ìŠ¤ì˜ ê°ì²´ê°€ íŒŒê´´ë  ë•Œ í•´ë‹¹ íŒŒìƒ í´ëž˜ìŠ¤ì˜ ì†Œë©¸ìžë¥¼ í˜¸ì¶œí•˜ê¸° ìœ„í•´ ê°€ìƒ ì†Œë©¸ìžë¡œ ì„ ì–¸
+    virtual void func1() { cout << "Base::func1()" << endl; } // ê°€ìƒ í•¨ìˆ˜ func1(): íŒŒìƒ í´ëž˜ìŠ¤ì—ì„œ ìž¬ì •ì˜ ê°€ëŠ¥í•œ í•¨ìˆ˜
+    virtual void func2() { cout << "Base::func2()" << endl; } // ê°€ìƒ í•¨ìˆ˜ func2(): íŒŒìƒ í´ëž˜ìŠ¤ì—ì„œ ìž¬ì •ì˜ ê°€ëŠ¥í•œ í•¨ìˆ˜
+    virtual void func3() { cout << "Base::func3()" << endl; } // ê°€ìƒ í•¨ìˆ˜ func3(): íŒŒìƒ í´ëž˜ìŠ¤ì—ì„œ ìž¬ì •ì˜ ê°€ëŠ¥í•œ í•¨ìˆ˜
 };
 
 class Derived : public Base {
 public:
-    void func1() override { cout << "Derived::func1()" << endl; } // func1()À» ¿À¹ö¶óÀÌµùÇÏ¿© »õ·Î¿î ±¸Çö Á¦°ø
-    void func3() override { cout << "Derived::func3()" << endl; } // func3()À» ¿À¹ö¶óÀÌµùÇÏ¿© »õ·Î¿î ±¸Çö Á¦°ø
-    void func4() { cout << "Derived::func4()" << endl; } // Derived Å¬·¡½º¿¡¸¸ Á¸ÀçÇÏ´Â »õ·Î¿î ¸â¹ö ÇÔ¼ö
+    void func1() override { cout << "Derived::func1()" << endl; } // func1()ì„ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ ìƒˆë¡œìš´ êµ¬í˜„ ì œê³µ
+    void func3() override { cout << "Derived::func3()" << endl; } // func3()ì„ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ ìƒˆë¡œìš´ êµ¬í˜„ ì œê³µ
+    void func4() { cout << "Derived::func4()" << endl; } // Derived í´ëž˜ìŠ¤ì—ë§Œ ì¡´ìž¬í•˜ëŠ” ìƒˆë¡œìš´ ë©¤ë²„ í•¨ìˆ˜
 
-    Derived() = default; // ±âº» »ý¼ºÀÚ¸¦ »ç¿ëÇÏ´Â °æ¿ì
+    Derived() = default; // ê¸°ë³¸ ìƒì„±ìžë¥¼ ì‚¬ìš©í•˜ëŠ” ê²½ìš°
 };
 
 int main() {
-    Base b; // Base Å¬·¡½ºÀÇ °´Ã¼ »ý¼º
-    Derived d; // Derived Å¬·¡½ºÀÇ °´Ã¼ »ý¼º
-    Base* pb = new Derived(); // Base Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ·Î Derived Å¬·¡½ºÀÇ °´Ã¼¸¦ °¡¸®Å´
+    Base b; // Base í´ëž˜ìŠ¤ì˜ ê°ì²´ ìƒì„±
+    Derived d; // Derived í´ëž˜ìŠ¤ì˜ ê°ì²´ ìƒì„±
+    Base* pb = new Derived(); // Base í´ëž˜ìŠ¤ì˜ í¬ì¸í„°ë¡œ Derived í´ëž˜ìŠ¤ì˜ ê°ì²´ë¥¼ ê°€ë¦¬í‚´
 
-    pb->func1(); // Derived::func1() - °¡»ó ÇÔ¼ö È£ÃâÀº ½ÇÁ¦ °´Ã¼ÀÇ Çü¿¡ µû¶ó ½ÇÇàµÊ
+    pb->func1(); // Derived::func1() - ê°€ìƒ í•¨ìˆ˜ í˜¸ì¶œì€ ì‹¤ì œ ê°ì²´ì˜ í˜•ì— ë”°ë¼ ì‹¤í–‰ë¨
     pb->func2(); // Base::func2()
     pb->func3(); // Derived::func3()
 
     cout << endl;
 
-    Derived* pd = &d; // Derived Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ·Î Derived °´Ã¼¸¦ °¡¸®Å´
+    Derived* pd = &d; // Derived í´ëž˜ìŠ¤ì˜ í¬ì¸í„°ë¡œ Derived ê°ì²´ë¥¼ ê°€ë¦¬í‚´
     pd->func1(); // Derived::func1()
     pd->func2(); // Base::func2()
     pd->func3(); // Derived::func3()
-    pd->func4(); // Derived::func4() - Derived Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
+    pd->func4(); // Derived::func4() - Derived í´ëž˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
 
-    delete pb; // µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Þ¸ð¸® ÇØÁ¦
+    delete pb; // ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ í•´ì œ
 
     return 0;
 }
 
 /*
-°¡»ó ÇÔ¼ö¿Í ´ÙÇü¼º:
+ê°€ìƒ í•¨ìˆ˜ì™€ ë‹¤í˜•ì„±:
 
-Base Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼öµé(func1(), func2(), func3())Àº ¸ðµÎ °¡»ó ÇÔ¼ö·Î ¼±¾ðµÇ¾î ÀÖ½À´Ï´Ù.
-Derived Å¬·¡½º¿¡¼­ func1()°ú func3()À» ¿À¹ö¶óÀÌµùÇÏ¿© »õ·Î¿î ±¸ÇöÀ» Á¦°øÇß½À´Ï´Ù.
-°¡»ó ÇÔ¼ö´Â °´Ã¼ÀÇ ½ÇÁ¦ ÇüÅÂ¿¡ µû¶ó È£ÃâµË´Ï´Ù. µû¶ó¼­ pb->func1()Àº Derived Å¬·¡½ºÀÇ func1()ÀÌ È£ÃâµË´Ï´Ù.
+Base í´ëž˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ë“¤(func1(), func2(), func3())ì€ ëª¨ë‘ ê°€ìƒ í•¨ìˆ˜ë¡œ ì„ ì–¸ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.
+Derived í´ëž˜ìŠ¤ì—ì„œ func1()ê³¼ func3()ì„ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ ìƒˆë¡œìš´ êµ¬í˜„ì„ ì œê³µí–ˆìŠµë‹ˆë‹¤.
+ê°€ìƒ í•¨ìˆ˜ëŠ” ê°ì²´ì˜ ì‹¤ì œ í˜•íƒœì— ë”°ë¼ í˜¸ì¶œë©ë‹ˆë‹¤. ë”°ë¼ì„œ pb->func1()ì€ Derived í´ëž˜ìŠ¤ì˜ func1()ì´ í˜¸ì¶œë©ë‹ˆë‹¤.
 
-µ¿Àû ÇÒ´ç ¹× ¸Þ¸ð¸® ÇØÁ¦:
+ë™ì  í• ë‹¹ ë° ë©”ëª¨ë¦¬ í•´ì œ:
 
-Base* pb = new Derived();¿Í °°ÀÌ µ¿ÀûÀ¸·Î Derived °´Ã¼¸¦ »ý¼ºÇÏ¿© Base Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ·Î °¡¸®Å³ ¼ö ÀÖ½À´Ï´Ù.
-µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Þ¸ð¸®´Â delete pb;¸¦ ÅëÇØ ÇØÁ¦µÇ¾î¾ß ÇÕ´Ï´Ù.
+Base* pb = new Derived();ì™€ ê°™ì´ ë™ì ìœ¼ë¡œ Derived ê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ Base í´ëž˜ìŠ¤ì˜ í¬ì¸í„°ë¡œ ê°€ë¦¬í‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ëŠ” delete pb;ë¥¼ í†µí•´ í•´ì œë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
 
-´ÙÇü¼ºÀÇ ¿¹:
+ë‹¤í˜•ì„±ì˜ ì˜ˆ:
 
-pb°¡ Base Å¬·¡½ºÀÇ Æ÷ÀÎÅÍÀÌÁö¸¸ ½ÇÁ¦·Î Derived °´Ã¼¸¦ °¡¸®Å°°í ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº ´ÙÇü¼ºÀÇ ÇÑ ¿¹ÀÔ´Ï´Ù.
-°¡»ó ÇÔ¼ö´Â °´Ã¼ÀÇ ½ÇÁ¦ ÇüÅÂ¸¦ ±â¹ÝÀ¸·Î È£ÃâµÇ¹Ç·Î Derived Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùÇÑ ÇÔ¼ö°¡ È£ÃâµË´Ï´Ù.
+pbê°€ Base í´ëž˜ìŠ¤ì˜ í¬ì¸í„°ì´ì§€ë§Œ ì‹¤ì œë¡œ Derived ê°ì²´ë¥¼ ê°€ë¦¬í‚¤ê³  ìžˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ ë‹¤í˜•ì„±ì˜ í•œ ì˜ˆìž…ë‹ˆë‹¤.
+ê°€ìƒ í•¨ìˆ˜ëŠ” ê°ì²´ì˜ ì‹¤ì œ í˜•íƒœë¥¼ ê¸°ë°˜ìœ¼ë¡œ í˜¸ì¶œë˜ë¯€ë¡œ Derived í´ëž˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©í•œ í•¨ìˆ˜ê°€ í˜¸ì¶œë©ë‹ˆë‹¤.
 */

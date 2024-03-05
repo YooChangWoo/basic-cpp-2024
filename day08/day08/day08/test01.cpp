@@ -6,7 +6,7 @@ class RemoteControl
 public:
     virtual void on()
     {
-        cout << "TVÅ°ÀÚ" << endl;
+        cout << "TVí‚¤ì" << endl;
     }
 };
 
@@ -15,7 +15,7 @@ class SamsungTv : public RemoteControl
 public:
     void on() override
     {
-        cout << "»ï¼º TV¸¦ ÄÕ´Ï´Ù." << endl;
+        cout << "ì‚¼ì„± TVë¥¼ ì¼­ë‹ˆë‹¤." << endl;
     }
 };
 
@@ -24,21 +24,21 @@ class LgTv : public RemoteControl
 public:
     void on() override
     {
-        cout << "¿¤Áö TV¸¦ ÄÕ´Ï´Ù." << endl;
+        cout << "ì—˜ì§€ TVë¥¼ ì¼­ë‹ˆë‹¤." << endl;
     }
 };
 
 int main(void)
 {
-    RemoteControl* remote = new SamsungTv(); // RemoteControl Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ¸¦ »ç¿ëÇÏ¿© SamsungTv °´Ã¼¸¦ °¡¸®Å´
-    remote->on(); // SamsungTv Å¬·¡½ºÀÇ on() ÇÔ¼ö È£Ãâ
+    RemoteControl* remote = new SamsungTv(); // RemoteControl í´ë˜ìŠ¤ì˜ í¬ì¸í„°ë¥¼ ì‚¬ìš©í•˜ì—¬ SamsungTv ê°ì²´ë¥¼ ê°€ë¦¬í‚´
+    remote->on(); // SamsungTv í´ë˜ìŠ¤ì˜ on() í•¨ìˆ˜ í˜¸ì¶œ
 
-    delete remote; // µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Ş¸ğ¸®¸¦ ÇØÁ¦
+    delete remote; // ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ í•´ì œ
 
-    remote = new LgTv(); // RemoteControl Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ¸¦ »ç¿ëÇÏ¿© LgTv °´Ã¼¸¦ °¡¸®Å´
-    remote->on(); // LgTv Å¬·¡½ºÀÇ on() ÇÔ¼ö È£Ãâ
+    remote = new LgTv(); // RemoteControl í´ë˜ìŠ¤ì˜ í¬ì¸í„°ë¥¼ ì‚¬ìš©í•˜ì—¬ LgTv ê°ì²´ë¥¼ ê°€ë¦¬í‚´
+    remote->on(); // LgTv í´ë˜ìŠ¤ì˜ on() í•¨ìˆ˜ í˜¸ì¶œ
 
-    delete remote; // µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Ş¸ğ¸®¸¦ ÇØÁ¦
+    delete remote; // ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ í•´ì œ
 
     return 0;
 }

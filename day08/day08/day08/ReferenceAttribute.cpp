@@ -8,7 +8,7 @@ public:
     {
         cout << "FirstFunc()" << endl;
     }
-    virtual void SimpleFunc() // °¡»ó ÇÔ¼ö·Î ¼±¾ğµÊ
+    virtual void SimpleFunc() // ê°€ìƒ í•¨ìˆ˜ë¡œ ì„ ì–¸ë¨
     {
         cout << "First's SimpleFunc()" << endl;
     }
@@ -21,7 +21,7 @@ public:
     {
         cout << "SecondFunc()" << endl;
     }
-    virtual void SimpleFunc() // °¡»ó ÇÔ¼ö·Î ¼±¾ğµÊ
+    virtual void SimpleFunc() // ê°€ìƒ í•¨ìˆ˜ë¡œ ì„ ì–¸ë¨
     {
         cout << "Second's SimpleFunc()" << endl;
     }
@@ -34,7 +34,7 @@ public:
     {
         cout << "ThirdFunc()" << endl;
     }
-    virtual void SimpleFunc() // °¡»ó ÇÔ¼ö·Î ¼±¾ğµÊ
+    virtual void SimpleFunc() // ê°€ìƒ í•¨ìˆ˜ë¡œ ì„ ì–¸ë¨
     {
         cout << "Third's SimpleFunc()" << endl;
     }
@@ -44,43 +44,43 @@ int main(void)
 {
     Third obj;
 
-    // Third Å¬·¡½ºÀÇ °´Ã¼·Î Á÷Á¢ È£Ãâ
-    obj.FirstFunc(); // First Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
-    obj.SecondFunc(); // Second Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
-    obj.ThirdFunc(); // Third Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
-    obj.SimpleFunc(); // Third Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùµÈ SimpleFunc() È£Ãâ
+    // Third í´ë˜ìŠ¤ì˜ ê°ì²´ë¡œ ì§ì ‘ í˜¸ì¶œ
+    obj.FirstFunc(); // First í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
+    obj.SecondFunc(); // Second í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
+    obj.ThirdFunc(); // Third í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
+    obj.SimpleFunc(); // Third í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ SimpleFunc() í˜¸ì¶œ
 
-    // Second Å¬·¡½ºÀÇ ÂüÁ¶·Î Third °´Ã¼ ÂüÁ¶
+    // Second í´ë˜ìŠ¤ì˜ ì°¸ì¡°ë¡œ Third ê°ì²´ ì°¸ì¡°
     Second& sref = obj;
-    sref.FirstFunc(); // First Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
-    sref.SecondFunc(); // Second Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
-    sref.SimpleFunc(); // Third Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùµÈ SimpleFunc() È£Ãâ
+    sref.FirstFunc(); // First í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
+    sref.SecondFunc(); // Second í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
+    sref.SimpleFunc(); // Third í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ SimpleFunc() í˜¸ì¶œ
 
-    // First Å¬·¡½ºÀÇ ÂüÁ¶·Î Third °´Ã¼ ÂüÁ¶
+    // First í´ë˜ìŠ¤ì˜ ì°¸ì¡°ë¡œ Third ê°ì²´ ì°¸ì¡°
     First& fref = obj;
-    fref.FirstFunc(); // First Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
-    fref.SimpleFunc(); // Third Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùµÈ SimpleFunc() È£Ãâ
+    fref.FirstFunc(); // First í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ
+    fref.SimpleFunc(); // Third í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ SimpleFunc() í˜¸ì¶œ
 
     return 0;
 }
 
 /*
-°¡»ó ÇÔ¼ö¿Í ´ÙÇü¼º:
+ê°€ìƒ í•¨ìˆ˜ì™€ ë‹¤í˜•ì„±:
 
-First, Second, Third Å¬·¡½º¿¡´Â SimpleFunc()ÀÌ¶ó´Â °¡»ó ÇÔ¼ö°¡ ÀÖ½À´Ï´Ù.
-SimpleFunc()Àº °¢ Å¬·¡½º¿¡¼­ ´Ù¸¥ µ¿ÀÛÀ» Á¦°øÇÒ ¼ö ÀÖ½À´Ï´Ù.
+First, Second, Third í´ë˜ìŠ¤ì—ëŠ” SimpleFunc()ì´ë¼ëŠ” ê°€ìƒ í•¨ìˆ˜ê°€ ìˆìŠµë‹ˆë‹¤.
+SimpleFunc()ì€ ê° í´ë˜ìŠ¤ì—ì„œ ë‹¤ë¥¸ ë™ì‘ì„ ì œê³µí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 
-°¡»ó ÇÔ¼ö È£ÃâÀÇ ´ÙÇü¼º:
+ê°€ìƒ í•¨ìˆ˜ í˜¸ì¶œì˜ ë‹¤í˜•ì„±:
 
-obj´Â Third Å¬·¡½ºÀÇ °´Ã¼ÀÔ´Ï´Ù. 
-µû¶ó¼­ obj.SimpleFunc()Àº Third Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇµÈ SimpleFunc()À» È£ÃâÇÕ´Ï´Ù.
-sref´Â Second Å¬·¡½ºÀÇ ÂüÁ¶·Î obj¸¦ ÂüÁ¶ÇÕ´Ï´Ù. 
-±×·¯³ª sref.SimpleFunc()Àº Third Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùµÈ SimpleFunc()À» È£ÃâÇÕ´Ï´Ù.
-ÀÌ°ÍÀÌ °¡»ó ÇÔ¼öÀÇ ´ÙÇü¼ºÀÔ´Ï´Ù.
-fref´Â First Å¬·¡½ºÀÇ ÂüÁ¶·Î obj¸¦ ÂüÁ¶ÇÕ´Ï´Ù.
-fref.SimpleFunc() ¿ª½Ã Third Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùµÈ SimpleFunc()À» È£ÃâÇÕ´Ï´Ù.
+objëŠ” Third í´ë˜ìŠ¤ì˜ ê°ì²´ì…ë‹ˆë‹¤. 
+ë”°ë¼ì„œ obj.SimpleFunc()ì€ Third í´ë˜ìŠ¤ì—ì„œ ì¬ì •ì˜ëœ SimpleFunc()ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
+srefëŠ” Second í´ë˜ìŠ¤ì˜ ì°¸ì¡°ë¡œ objë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤. 
+ê·¸ëŸ¬ë‚˜ sref.SimpleFunc()ì€ Third í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ SimpleFunc()ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
+ì´ê²ƒì´ ê°€ìƒ í•¨ìˆ˜ì˜ ë‹¤í˜•ì„±ì…ë‹ˆë‹¤.
+frefëŠ” First í´ë˜ìŠ¤ì˜ ì°¸ì¡°ë¡œ objë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤.
+fref.SimpleFunc() ì—­ì‹œ Third í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ SimpleFunc()ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
 
-»ó¼Ó °ü°è¿Í ¸â¹ö ÇÔ¼ö È£Ãâ:
+ìƒì† ê´€ê³„ì™€ ë©¤ë²„ í•¨ìˆ˜ í˜¸ì¶œ:
 
-°´Ã¼ÀÇ ½ÇÁ¦ ÇüÅÂ¿¡ µû¶ó ¸â¹ö ÇÔ¼ö°¡ È£ÃâµË´Ï´Ù. µû¶ó¼­ °´Ã¼°¡ ¾î¶² Å¬·¡½º¸¦ »ó¼ÓÇß´ÂÁö¿¡ µû¶ó È£Ãâ °á°ú°¡ ´Ş¶óÁı´Ï´Ù.
+ê°ì²´ì˜ ì‹¤ì œ í˜•íƒœì— ë”°ë¼ ë©¤ë²„ í•¨ìˆ˜ê°€ í˜¸ì¶œë©ë‹ˆë‹¤. ë”°ë¼ì„œ ê°ì²´ê°€ ì–´ë–¤ í´ë˜ìŠ¤ë¥¼ ìƒì†í–ˆëŠ”ì§€ì— ë”°ë¼ í˜¸ì¶œ ê²°ê³¼ê°€ ë‹¬ë¼ì§‘ë‹ˆë‹¤.
 */

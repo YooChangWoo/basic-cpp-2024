@@ -1,51 +1,51 @@
 #include <iostream>
 using namespace std;
 
-// Person Å¬·¡½º Á¤ÀÇ
+// Person í´ëž˜ìŠ¤ ì •ì˜
 class Person
 {
 public:
     void Sleep() { cout << "sleep" << endl; }
 };
 
-// Student Å¬·¡½º Á¤ÀÇ, Person Å¬·¡½º¸¦ »ó¼ÓÇÔ
+// Student í´ëž˜ìŠ¤ ì •ì˜, Person í´ëž˜ìŠ¤ë¥¼ ìƒì†í•¨
 class Student : public Person
 {
 public:
     void Study() { cout << "Study" << endl; }
 };
 
-// PartTimeStudent Å¬·¡½º Á¤ÀÇ, Student Å¬·¡½º¸¦ »ó¼ÓÇÔ
+// PartTimeStudent í´ëž˜ìŠ¤ ì •ì˜, Student í´ëž˜ìŠ¤ë¥¼ ìƒì†í•¨
 class PartTimeStudent : public Student
 {
 public:
     void Work() { cout << "Work" << endl; }
 };
 
-// main ÇÔ¼ö
+// main í•¨ìˆ˜
 int main(void)
 {
-    //Student * ptr0 = new Student();    // µ¿ÀÏÇÑ Å¸ÀÔÀ¸·Î »ç¿ëÇÏ´Â °ÍÀÌ ¿øÄ¢ÀÌ´Ù.
+    //Student * ptr0 = new Student();    // ë™ì¼í•œ íƒ€ìž…ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ì›ì¹™ì´ë‹¤.
     /*
-     ºÎ¸ðÅ¸ÀÔÀÇ °´Ã¼ Æ÷ÀÎÅÍ·Î ÀÚ½Ä °´Ã¼¸¦ °¡¸®Å³ ¼ö ÀÖ´Ù.
-     ÇÏÁö¸¸ ÀÚ½ÄÅ¸ÀÔÀÇ °´Ã¼ Æ÷ÀÎÅÍ·Î ºÎ¸ð °´Ã¼¸¦ °¡¸®Å³ ¼ö ¾ø´Ù.
-     ±×¸®°í Á¢±ÙÀº °´Ã¼ Æ÷ÀÎÅÍÀÇ Å¸ÀÔÀ» µû¸¥´Ù.
+     ë¶€ëª¨íƒ€ìž…ì˜ ê°ì²´ í¬ì¸í„°ë¡œ ìžì‹ ê°ì²´ë¥¼ ê°€ë¦¬í‚¬ ìˆ˜ ìžˆë‹¤.
+     í•˜ì§€ë§Œ ìžì‹íƒ€ìž…ì˜ ê°ì²´ í¬ì¸í„°ë¡œ ë¶€ëª¨ ê°ì²´ë¥¼ ê°€ë¦¬í‚¬ ìˆ˜ ì—†ë‹¤.
+     ê·¸ë¦¬ê³  ì ‘ê·¼ì€ ê°ì²´ í¬ì¸í„°ì˜ íƒ€ìž…ì„ ë”°ë¥¸ë‹¤.
     */
-    // Person Å¸ÀÔÀÇ Æ÷ÀÎÅÍ·Î Student °´Ã¼¸¦ °¡¸®Å°´Â ¿¹Á¦
+    // Person íƒ€ìž…ì˜ í¬ì¸í„°ë¡œ Student ê°ì²´ë¥¼ ê°€ë¦¬í‚¤ëŠ” ì˜ˆì œ
     Person* prt1 = new Student();
 
-    // Person Å¸ÀÔÀÇ Æ÷ÀÎÅÍ·Î PartTimeStudent °´Ã¼¸¦ °¡¸®Å°´Â ¿¹Á¦
+    // Person íƒ€ìž…ì˜ í¬ì¸í„°ë¡œ PartTimeStudent ê°ì²´ë¥¼ ê°€ë¦¬í‚¤ëŠ” ì˜ˆì œ
     Person* ptr2 = new PartTimeStudent();
 
-    // Student Å¸ÀÔÀÇ Æ÷ÀÎÅÍ·Î PartTimeStudent °´Ã¼¸¦ °¡¸®Å°´Â ¿¹Á¦
+    // Student íƒ€ìž…ì˜ í¬ì¸í„°ë¡œ PartTimeStudent ê°ì²´ë¥¼ ê°€ë¦¬í‚¤ëŠ” ì˜ˆì œ
     Student* ptr3 = new PartTimeStudent();
 
-    // °¢°¢ÀÇ Æ÷ÀÎÅÍ¸¦ ÅëÇØ ¸Þ¼­µå È£Ãâ
-    prt1->Sleep(); // Person Å¸ÀÔÀÇ Æ÷ÀÎÅÍÀÌ¹Ç·Î Person Å¬·¡½ºÀÇ Sleep ¸Þ¼­µå È£Ãâ
-    ptr2->Sleep(); // Person Å¸ÀÔÀÇ Æ÷ÀÎÅÍÀÌ¹Ç·Î Person Å¬·¡½ºÀÇ Sleep ¸Þ¼­µå È£Ãâ
-    ptr3->Study(); // Student Å¸ÀÔÀÇ Æ÷ÀÎÅÍÀÌ¹Ç·Î Student Å¬·¡½ºÀÇ Study ¸Þ¼­µå È£Ãâ
+    // ê°ê°ì˜ í¬ì¸í„°ë¥¼ í†µí•´ ë©”ì„œë“œ í˜¸ì¶œ
+    prt1->Sleep(); // Person íƒ€ìž…ì˜ í¬ì¸í„°ì´ë¯€ë¡œ Person í´ëž˜ìŠ¤ì˜ Sleep ë©”ì„œë“œ í˜¸ì¶œ
+    ptr2->Sleep(); // Person íƒ€ìž…ì˜ í¬ì¸í„°ì´ë¯€ë¡œ Person í´ëž˜ìŠ¤ì˜ Sleep ë©”ì„œë“œ í˜¸ì¶œ
+    ptr3->Study(); // Student íƒ€ìž…ì˜ í¬ì¸í„°ì´ë¯€ë¡œ Student í´ëž˜ìŠ¤ì˜ Study ë©”ì„œë“œ í˜¸ì¶œ
 
-    // µ¿Àû ÇÒ´çµÈ ¸Þ¸ð¸®¸¦ ÇØÁ¦
+    // ë™ì  í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ í•´ì œ
     delete prt1;
     delete ptr2;
     delete ptr3;
@@ -53,17 +53,17 @@ int main(void)
     return 0;
 }
 /*
-Å¬·¡½ºÀÇ »ó¼Ó °ü°è : Person Å¬·¡½º´Â Student Å¬·¡½ºÀÇ ºÎ¸ðÀÌ°í,
-Student Å¬·¡½º´Â PartTimeStudent Å¬·¡½ºÀÇ ºÎ¸ðÀÔ´Ï´Ù.
-ÀÌ·¯ÇÑ »ó¼Ó °ü°è¸¦ ÅëÇØ Å¬·¡½º °£¿¡´Â °èÃþ ±¸Á¶°¡ Çü¼ºµË´Ï´Ù.
+í´ëž˜ìŠ¤ì˜ ìƒì† ê´€ê³„ : Person í´ëž˜ìŠ¤ëŠ” Student í´ëž˜ìŠ¤ì˜ ë¶€ëª¨ì´ê³ ,
+Student í´ëž˜ìŠ¤ëŠ” PartTimeStudent í´ëž˜ìŠ¤ì˜ ë¶€ëª¨ìž…ë‹ˆë‹¤.
+ì´ëŸ¬í•œ ìƒì† ê´€ê³„ë¥¼ í†µí•´ í´ëž˜ìŠ¤ ê°„ì—ëŠ” ê³„ì¸µ êµ¬ì¡°ê°€ í˜•ì„±ë©ë‹ˆë‹¤.
 
-Æ÷ÀÎÅÍ¿Í ´ÙÇü¼º : Æ÷ÀÎÅÍ¸¦ ÅëÇØ ´Ù¾çÇÑ °´Ã¼¸¦ °¡¸®Å³ ¼ö ÀÖ½À´Ï´Ù.
-¿¹¸¦ µé¾î, Person* prt1Àº Student °´Ã¼¸¦ °¡¸®Å³ ¼ö ÀÖ½À´Ï´Ù.ÀÌ´Â ´ÙÇü¼ºÀÇ °³³äÀÔ´Ï´Ù.
+í¬ì¸í„°ì™€ ë‹¤í˜•ì„± : í¬ì¸í„°ë¥¼ í†µí•´ ë‹¤ì–‘í•œ ê°ì²´ë¥¼ ê°€ë¦¬í‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+ì˜ˆë¥¼ ë“¤ì–´, Person* prt1ì€ Student ê°ì²´ë¥¼ ê°€ë¦¬í‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.ì´ëŠ” ë‹¤í˜•ì„±ì˜ ê°œë…ìž…ë‹ˆë‹¤.
 
-Á¢±Ù°ú Æ÷ÀÎÅÍÀÇ Å¸ÀÔ : Æ÷ÀÎÅÍÀÇ Å¸ÀÔÀº ÇØ´ç Æ÷ÀÎÅÍ°¡ °¡¸®Å°´Â °´Ã¼ÀÇ Å¸ÀÔÀÌ ¾Æ´Ï¶ó
-Æ÷ÀÎÅÍ ÀÚÃ¼ÀÇ Å¸ÀÔÀ» µû¸¨´Ï´Ù.ÀÌ´Â ¸Þ¼­µå È£Ãâ ½Ã¿¡µµ Àû¿ëµË´Ï´Ù.
+ì ‘ê·¼ê³¼ í¬ì¸í„°ì˜ íƒ€ìž… : í¬ì¸í„°ì˜ íƒ€ìž…ì€ í•´ë‹¹ í¬ì¸í„°ê°€ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ì˜ íƒ€ìž…ì´ ì•„ë‹ˆë¼
+í¬ì¸í„° ìžì²´ì˜ íƒ€ìž…ì„ ë”°ë¦…ë‹ˆë‹¤.ì´ëŠ” ë©”ì„œë“œ í˜¸ì¶œ ì‹œì—ë„ ì ìš©ë©ë‹ˆë‹¤.
 
-¸Þ¸ð¸® °ü¸® : µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Þ¸ð¸®´Â ÀûÀýÇÑ ½ÃÁ¡¿¡ delete ¿¬»êÀÚ¸¦ »ç¿ëÇÏ¿© ÇØÁ¦µÇ¾î¾ß ÇÕ´Ï´Ù.
+ë©”ëª¨ë¦¬ ê´€ë¦¬ : ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ëŠ” ì ì ˆí•œ ì‹œì ì— delete ì—°ì‚°ìžë¥¼ ì‚¬ìš©í•˜ì—¬ í•´ì œë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
 
-ÀÌ·¯ÇÑ °³³äµéÀº °´Ã¼ ÁöÇâ ÇÁ·Î±×·¡¹Ö¿¡¼­ Áß¿äÇÑ °³³äÀ¸·Î, ÄÚµå¸¦ ÅëÇØ Àß ÀÌÇØÇÏ°í È°¿ëÇÒ ¼ö ÀÖ¾î¾ß ÇÕ´Ï´Ù.
+ì´ëŸ¬í•œ ê°œë…ë“¤ì€ ê°ì²´ ì§€í–¥ í”„ë¡œê·¸ëž˜ë°ì—ì„œ ì¤‘ìš”í•œ ê°œë…ìœ¼ë¡œ, ì½”ë“œë¥¼ í†µí•´ ìž˜ ì´í•´í•˜ê³  í™œìš©í•  ìˆ˜ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.
 */

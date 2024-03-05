@@ -4,7 +4,7 @@ using namespace std;
 class First
 {
 public:
-    // °¡»ó ÇÔ¼ö MyFunc()¸¦ ¼±¾ðÇÏ°í FirstFuncÀ» Ãâ·ÂÇÕ´Ï´Ù.
+    // ê°€ìƒ í•¨ìˆ˜ MyFunc()ë¥¼ ì„ ì–¸í•˜ê³  FirstFuncì„ ì¶œë ¥í•©ë‹ˆë‹¤.
     virtual void MyFunc()
     {
         cout << "FirstFunc" << endl;
@@ -14,7 +14,7 @@ public:
 class Second : public First
 {
 public:
-    // °¡»ó ÇÔ¼ö MyFunc()¸¦ ¿À¹ö¶óÀÌµùÇÏ¿© SecondFuncÀ» Ãâ·ÂÇÕ´Ï´Ù.
+    // ê°€ìƒ í•¨ìˆ˜ MyFunc()ë¥¼ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ SecondFuncì„ ì¶œë ¥í•©ë‹ˆë‹¤.
     virtual void MyFunc() override
     {
         cout << "SecondFunc" << endl;
@@ -24,7 +24,7 @@ public:
 class Third : public Second
 {
 public:
-    // °¡»ó ÇÔ¼ö MyFunc()¸¦ ¿À¹ö¶óÀÌµùÇÏ¿© ThirdFuncÀ» Ãâ·ÂÇÕ´Ï´Ù.
+    // ê°€ìƒ í•¨ìˆ˜ MyFunc()ë¥¼ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ ThirdFuncì„ ì¶œë ¥í•©ë‹ˆë‹¤.
     virtual void MyFunc() override
     {
         cout << "ThirdFunc" << endl;
@@ -33,41 +33,41 @@ public:
 
 int main(void)
 {
-    // Third Å¬·¡½ºÀÇ °´Ã¼ Æ÷ÀÎÅÍ¸¦ »ý¼ºÇÕ´Ï´Ù.
+    // Third í´ëž˜ìŠ¤ì˜ ê°ì²´ í¬ì¸í„°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
     Third* tptr = new Third();
-    // Second Å¬·¡½ºÀÇ °´Ã¼ Æ÷ÀÎÅÍ sptr¿¡ tptrÀ» ´ëÀÔÇÕ´Ï´Ù.
+    // Second í´ëž˜ìŠ¤ì˜ ê°ì²´ í¬ì¸í„° sptrì— tptrì„ ëŒ€ìž…í•©ë‹ˆë‹¤.
     Second* sptr = tptr;
-    // First Å¬·¡½ºÀÇ °´Ã¼ Æ÷ÀÎÅÍ fptr¿¡ sptrÀ» ´ëÀÔÇÕ´Ï´Ù.
+    // First í´ëž˜ìŠ¤ì˜ ê°ì²´ í¬ì¸í„° fptrì— sptrì„ ëŒ€ìž…í•©ë‹ˆë‹¤.
     First* fptr = sptr;
 
-    // fptrÀÇ MyFunc()¸¦ È£ÃâÇÏ¸é °¡»ó ÇÔ¼öÀÇ µ¿Àû ¹ÙÀÎµùÀÌ ¹ß»ýÇÏ¿© ½ÇÁ¦ °´Ã¼ÀÇ MyFunc()°¡ È£ÃâµË´Ï´Ù.
-    fptr->MyFunc(); // "ThirdFunc" Ãâ·Â
-    // sptrÀÇ MyFunc()¸¦ È£ÃâÇÏ¸é sptrÀÌ °¡¸®Å°´Â °´Ã¼ÀÇ MyFunc()°¡ È£ÃâµË´Ï´Ù.
-    sptr->MyFunc(); // "ThirdFunc" Ãâ·Â
-    // tptrÀÇ MyFunc()¸¦ È£ÃâÇÏ¸é tptrÀÌ °¡¸®Å°´Â °´Ã¼ÀÇ MyFunc()°¡ È£ÃâµË´Ï´Ù.
-    tptr->MyFunc(); // "ThirdFunc" Ãâ·Â
+    // fptrì˜ MyFunc()ë¥¼ í˜¸ì¶œí•˜ë©´ ê°€ìƒ í•¨ìˆ˜ì˜ ë™ì  ë°”ì¸ë”©ì´ ë°œìƒí•˜ì—¬ ì‹¤ì œ ê°ì²´ì˜ MyFunc()ê°€ í˜¸ì¶œë©ë‹ˆë‹¤.
+    fptr->MyFunc(); // "ThirdFunc" ì¶œë ¥
+    // sptrì˜ MyFunc()ë¥¼ í˜¸ì¶œí•˜ë©´ sptrì´ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ì˜ MyFunc()ê°€ í˜¸ì¶œë©ë‹ˆë‹¤.
+    sptr->MyFunc(); // "ThirdFunc" ì¶œë ¥
+    // tptrì˜ MyFunc()ë¥¼ í˜¸ì¶œí•˜ë©´ tptrì´ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ì˜ MyFunc()ê°€ í˜¸ì¶œë©ë‹ˆë‹¤.
+    tptr->MyFunc(); // "ThirdFunc" ì¶œë ¥
 
-    // ¸Þ¸ð¸® ´©¼ö¸¦ ¹æÁöÇÏ±â À§ÇØ tptrÀÌ °¡¸®Å°´Â °´Ã¼¸¦ »èÁ¦ÇÕ´Ï´Ù.
+    // ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•´ tptrì´ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ë¥¼ ì‚­ì œí•©ë‹ˆë‹¤.
     delete tptr;
     return 0;
 }
 
 /*
-°¡»ó ÇÔ¼ö¿Í ´ÙÇü¼º:
-Å¬·¡½º First, Second, Third¿¡¼­ ¸ðµÎ MyFunc() ÇÔ¼ö¸¦ °¡»ó ÇÔ¼ö·Î ¼±¾ðÇÏ°í ÀÖ½À´Ï´Ù.
-ÀÌ´Â ÆÄ»ý Å¬·¡½º¿¡¼­ ÇØ´ç ÇÔ¼ö¸¦ ÀçÁ¤ÀÇÇÒ ¼ö ÀÖ°Ô ÇÕ´Ï´Ù.
-ÀÌ·¯ÇÑ ±â´ÉÀ» ÅëÇØ µ¿ÀÏÇÑ ÇÔ¼ö È£ÃâÀÌ ´Ù¸¥ µ¿ÀÛÀ» ¼öÇàÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ê°€ìƒ í•¨ìˆ˜ì™€ ë‹¤í˜•ì„±:
+í´ëž˜ìŠ¤ First, Second, Thirdì—ì„œ ëª¨ë‘ MyFunc() í•¨ìˆ˜ë¥¼ ê°€ìƒ í•¨ìˆ˜ë¡œ ì„ ì–¸í•˜ê³  ìžˆìŠµë‹ˆë‹¤.
+ì´ëŠ” íŒŒìƒ í´ëž˜ìŠ¤ì—ì„œ í•´ë‹¹ í•¨ìˆ˜ë¥¼ ìž¬ì •ì˜í•  ìˆ˜ ìžˆê²Œ í•©ë‹ˆë‹¤.
+ì´ëŸ¬í•œ ê¸°ëŠ¥ì„ í†µí•´ ë™ì¼í•œ í•¨ìˆ˜ í˜¸ì¶œì´ ë‹¤ë¥¸ ë™ìž‘ì„ ìˆ˜í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-°´Ã¼ Æ÷ÀÎÅÍÀÇ ´ÙÇü¼º:
-Third Å¬·¡½ºÀÇ °´Ã¼ Æ÷ÀÎÅÍ¸¦ »ý¼ºÇÏ°í, ÀÌ¸¦ Second Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ·Î ´ëÀÔÇÏ°í,
-´Ù½Ã ÀÌ¸¦ First Å¬·¡½ºÀÇ Æ÷ÀÎÅÍ·Î ´ëÀÔÇÏ¿© ´ÙÇü¼ºÀ» º¸¿©ÁÝ´Ï´Ù.
-ÀÌ·¸°Ô ÇÔÀ¸·Î½á °°Àº ÇÔ¼ö È£ÃâÀÌ ¼­·Î ´Ù¸¥ Å¬·¡½ºÀÇ ÇÔ¼ö¸¦ ½ÇÇàÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ê°ì²´ í¬ì¸í„°ì˜ ë‹¤í˜•ì„±:
+Third í´ëž˜ìŠ¤ì˜ ê°ì²´ í¬ì¸í„°ë¥¼ ìƒì„±í•˜ê³ , ì´ë¥¼ Second í´ëž˜ìŠ¤ì˜ í¬ì¸í„°ë¡œ ëŒ€ìž…í•˜ê³ ,
+ë‹¤ì‹œ ì´ë¥¼ First í´ëž˜ìŠ¤ì˜ í¬ì¸í„°ë¡œ ëŒ€ìž…í•˜ì—¬ ë‹¤í˜•ì„±ì„ ë³´ì—¬ì¤ë‹ˆë‹¤.
+ì´ë ‡ê²Œ í•¨ìœ¼ë¡œì¨ ê°™ì€ í•¨ìˆ˜ í˜¸ì¶œì´ ì„œë¡œ ë‹¤ë¥¸ í´ëž˜ìŠ¤ì˜ í•¨ìˆ˜ë¥¼ ì‹¤í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-µ¿Àû ¹ÙÀÎµù:
-MyFunc() ÇÔ¼ö´Â °¡»ó ÇÔ¼öÀÌ¹Ç·Î, °´Ã¼ Æ÷ÀÎÅÍ°¡ ½ÇÁ¦·Î °¡¸®Å°´Â °´Ã¼ÀÇ ÇÔ¼ö°¡ È£ÃâµË´Ï´Ù.
-ÀÌ°ÍÀ» µ¿Àû ¹ÙÀÎµùÀÌ¶ó°í ÇÕ´Ï´Ù. ÇÁ·Î±×·¥ÀÌ ½ÇÇà Áß¿¡ È£ÃâµÉ ÇÔ¼ö°¡ °áÁ¤µÇ´Â °ÍÀ» ÀÇ¹ÌÇÕ´Ï´Ù.
+ë™ì  ë°”ì¸ë”©:
+MyFunc() í•¨ìˆ˜ëŠ” ê°€ìƒ í•¨ìˆ˜ì´ë¯€ë¡œ, ê°ì²´ í¬ì¸í„°ê°€ ì‹¤ì œë¡œ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ì˜ í•¨ìˆ˜ê°€ í˜¸ì¶œë©ë‹ˆë‹¤.
+ì´ê²ƒì„ ë™ì  ë°”ì¸ë”©ì´ë¼ê³  í•©ë‹ˆë‹¤. í”„ë¡œê·¸ëž¨ì´ ì‹¤í–‰ ì¤‘ì— í˜¸ì¶œë  í•¨ìˆ˜ê°€ ê²°ì •ë˜ëŠ” ê²ƒì„ ì˜ë¯¸í•©ë‹ˆë‹¤.
 
-¸Þ¸ð¸® °ü¸®:
-new ¿¬»êÀÚ·Î µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¸Þ¸ð¸®´Â delete ¿¬»êÀÚ¸¦ »ç¿ëÇÏ¿© ¸í½ÃÀûÀ¸·Î ÇØÁ¦µÇ¾î¾ß ÇÕ´Ï´Ù.
-ÀÌ´Â ¸Þ¸ð¸® ´©¼ö¸¦ ¹æÁöÇÏ±â À§ÇØ ÇÊ¿äÇÑ Áß¿äÇÑ ÀýÂ÷ÀÔ´Ï´Ù.
+ë©”ëª¨ë¦¬ ê´€ë¦¬:
+new ì—°ì‚°ìžë¡œ ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë©”ëª¨ë¦¬ëŠ” delete ì—°ì‚°ìžë¥¼ ì‚¬ìš©í•˜ì—¬ ëª…ì‹œì ìœ¼ë¡œ í•´ì œë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
+ì´ëŠ” ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•´ í•„ìš”í•œ ì¤‘ìš”í•œ ì ˆì°¨ìž…ë‹ˆë‹¤.
 */
